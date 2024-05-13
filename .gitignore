@@ -1,0 +1,11 @@
+ENV/*
+
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+*.egg
+*.so
+*.a
+
+*.env
