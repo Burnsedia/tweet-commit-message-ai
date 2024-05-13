@@ -1,0 +1,19 @@
+name: 'Building In Public Tweet'
+description: 'A GitHub Action that tweets the commit message'
+job:
+  env:
+    COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+      shell: bash
+    - name: tweet the commit message
+      id: get-square
+      run: python main.py 
+      shell: bash
