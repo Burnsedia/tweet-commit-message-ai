@@ -23,7 +23,9 @@ GITHUB_USERNAME = os.environ.get("GITHUB_USERNAME")
 GITHUB_REPO = os.environ.get("GITHUB_REPO")
 URL = f"https://api.github.com/repos/{GITHUB_USERNAME}/{GITHUB_REPO}/git/refs/heads/master"
 
-commitMessage = requests.get(URL).text
+
+
+commitMessage = os.getenv("COMMIT_MESSAGE")
 prompt = f"Please create a summary of the following commit message: {commitMessage} and make sure it is clear and concise with a sense of wit. Make this a tweet for the perpuse of building in public."
 
 def main():
