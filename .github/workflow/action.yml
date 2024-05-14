@@ -3,6 +3,7 @@ description: 'A GitHub Action that tweets the commit message'
 job:
   env:
     COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+
 runs:
   using: 'composite'
   steps:
