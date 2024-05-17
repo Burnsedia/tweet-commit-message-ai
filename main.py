@@ -1,13 +1,11 @@
-import requests
 import openai
 import tweepy
 import os
 from tweepy import Client
 
-
-openai.api_key = os.environ.get("OPENAI_API_KEY")
-
-
+#setup openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+# setup twitter
 api_key = os.getenv("INSERT API KEY")
 api_secret = os.getenv("INSERT API KEY SECRET")
 bearer_token = os.getenv("INSERT BEARER TOKEN")
@@ -18,12 +16,6 @@ client = Client(bearer_token, api_key, api_secret, access_token, access_token_se
 
 auth = tweepy.OAuth1UserHandler(api_key, api_secret, access_token, access_token_secret)
 api = tweepy.API(auth)
-
-GITHUB_USERNAME = os.environ.get("GITHUB_USERNAME")
-GITHUB_REPO = os.environ.get("GITHUB_REPO")
-URL = f"https://api.github.com/repos/{GITHUB_USERNAME}/{GITHUB_REPO}/git/refs/heads/master"
-
-
 
 commitMessage = os.getenv("COMMIT_MESSAGE")
 prompt = f"Please create a summary of the following commit message: {commitMessage} and make sure it is clear and concise with a sense of wit. Make this a tweet for the perpuse of building in public."
