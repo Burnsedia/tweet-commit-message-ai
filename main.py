@@ -5,13 +5,13 @@ from tweepy import Client
 
 #setup openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
-# setup twitter
+# get twitter credentials
 api_key = os.getenv("INSERT API KEY")
 api_secret = os.getenv("INSERT API KEY SECRET")
 bearer_token = os.getenv("INSERT BEARER TOKEN")
 access_token = os.getenv("INSERT ACCESS TOKEN")
 access_token_secret = os.getenv("INSERT ACCESS TOKEN SECRET")
-
+# setup twitter
 client = Client(bearer_token, api_key, api_secret, access_token, access_token_secret)
 
 auth = tweepy.OAuth1UserHandler(api_key, api_secret, access_token, access_token_secret)
