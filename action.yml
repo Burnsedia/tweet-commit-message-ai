@@ -1,6 +1,7 @@
 name: 'Building In Public Tweet'
 description: 'A GitHub Action that tweets the commit message'
 
+
 jobs:
   tweet:
     runs-on: ubuntu-latest
