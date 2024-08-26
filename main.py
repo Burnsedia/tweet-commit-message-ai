@@ -6,11 +6,11 @@ from tweepy import Client
 #setup openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
 # get twitter credentials
-api_key = os.getenv("INSERT API KEY")
-api_secret = os.getenv("INSERT API KEY SECRET")
-bearer_token = os.getenv("INSERT BEARER TOKEN")
+api_key = os.getenv("TWITTER_API_KEY")
+api_secret = os.getenv("TWITTER_API_SECRET")
+bearer_token = os.getenv("TWITTER_BEARER_TOKEN")
 access_token = os.getenv("INSERT ACCESS TOKEN")
-access_token_secret = os.getenv("INSERT ACCESS TOKEN SECRET")
+access_token_secret = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 # setup twitter
 client = Client(bearer_token, api_key, api_secret, access_token, access_token_secret)
 
